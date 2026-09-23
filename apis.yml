@@ -1,23 +1,84 @@
 aid: landr
+
 name: LANDR
-description: 'LANDR is a company surfaced via the API Evangelist harvest backlog (source: music) and added
-  to the network as a stub for full-pipeline profiling.'
+
+description: LANDR is a creative platform for musicians offering AI‑powered mastering, distribution, sample libraries, plugins, and collaborative
+  tools. It provides a suite of services including LANDR Studio, mastering plugins, a marketplace for samples and plugins, online courses, and
+  tools for music creators to release and monetize their work worldwide.
+
 url: https://raw.githubusercontent.com/api-evangelist/landr/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:music
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-23'
+
 modified: '2026-09-23'
+
 tags:
 - Company
-apis: []
+- Music
+- AI
+- Audio
+- Distribution
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/landr-status-security.txt
+- type: WellKnown
+  url: well-known/landr-well-known.yml
+- type: Hosts
+  url: hosts/landr-hosts.yml
+- type: Vendors
+  url: vendors/landr-vendors.yml
+- type: StatusPage
+  url: https://status.landr.com/
+- type: Newsroom
+  url: https://www.landr.com/en/press/?utm_source=blog&utm_medium=organic_post&utm_campaign=Engagement_General_EN_Core_Blog&utm_term=BlogFooter&utm_content=PressPage
+- type: DomainSecurity
+  url: security/landr-domain-security.yml
 - type: Website
   url: https://landr.com/
+- type: Support
+  url: https://support.landr.com
+- type: Blog
+  url: https://blog.landr.com
+- type: Pricing
+  url: https://www.landr.com/pricing
+- type: TermsOfService
+  url: https://www.landr.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.landr.com/privacy
+
+apis:
+- name: LANDR API
+  description: API for LANDR services (mastering, distribution, samples).
+  humanURL: https://www.landr.com/pricing
+  aid: landr:landr-api
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: API documentation redirects to a partner login page requiring credentials.
+  evidence:
+  - url: https://app.landr.com/api-docs
+    status: 200
+  checked: 2026-09-23
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
